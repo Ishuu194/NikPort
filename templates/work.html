@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+     <!-- CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layout.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/components.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css')}}">
+</head>
+<body>
+    {% include 'nav.html' %}
+    <!-- ================= WORK / PROJECTS ================= -->
+
+        <section class="section" id="projects">
+
+            <div class="container">
+
+                <span class="skills-label">MY WORK</span>
+
+                <h2 class="section-title">
+                    Creative Work
+                </h2>
+
+                <p class="section-lede">
+                    Explore my Motion Graphics and Video Editing work.
+                </p>
+
+
+                <div class="work-folder-grid">
+
+                    <!-- AI Video -->
+                    <div class="work-folder" onclick="openFolder('ai_video')">
+                        <div class="folder-icon">📁</div>
+                        <h3>AI Video</h3>
+                        <p>AI-generated video projects</p>
+                    </div>
+
+
+                    <!-- Motion Graphics -->
+                    <div class="work-folder" onclick="openFolder('Motion_Graphics_video')">
+                        <div class="folder-icon">📁</div>
+                        <h3>Motion Graphics Video</h3>
+                        <p>Motion graphics and animations</p>
+                    </div>
+
+
+                    <!-- Podcast -->
+                    <div class="work-folder" onclick="openFolder('podcast_video')">
+                        <div class="folder-icon">📁</div>
+                        <h3>Podcast Video</h3>
+                        <p>Podcast editing projects</p>
+                    </div>
+
+
+                    <!-- Reels -->
+                    <div class="work-folder" onclick="openFolder('Reels')">
+                        <div class="folder-icon">📁</div>
+                        <h3>Reels</h3>
+                        <p>Short-form video content</p>
+                    </div>
+
+
+                    <!-- Video Edit -->
+                    <div class="work-folder" onclick="openFolder('Video_edit')">
+                        <div class="folder-icon">📁</div>
+                        <h3>Video Edit</h3>
+                        <p>Professional video editing</p>
+                    </div>
+
+
+                    <!-- White Board -->
+                    <div class="work-folder" onclick="openFolder('white_board_animation')">
+                        <div class="folder-icon">📁</div>
+                        <h3>White Board Animation</h3>
+                        <p>Whiteboard animation projects</p>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FILE AREA ================= -->
+
+                <div id="file-area" class="file-area">
+
+                    <div class="file-area-header">
+                        <button onclick="closeFolder()" class="back-folder">
+                            ← Back
+                        </button>
+
+                        <h3 id="folder-title">
+                            Files
+                        </h3>
+                    </div>
+
+
+                    <div id="file-list" class="file-list">
+                        <!-- Files will appear here -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <p class="footer-name">
+                Nikhil Bonde
+            </p>
+
+
+            <p class="footer-copy">
+
+                © <span id="year"></span>
+                Nikhil Bonde. All rights reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Back To Top -->
+
+    <button
+        class="to-top"
+        id="to-top"
+        type="button"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='js/project.js') }}" defer></script>
+
+    <script src="{{ url_for('static', filename='js/animation.js') }}" defer></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

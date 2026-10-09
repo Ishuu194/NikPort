@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+     <!-- CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layout.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/components.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css')}}">
+</head>
+<body>
+   {% include 'nav.html' %}
+
+    <!-- ================= SKILLS ================= -->
+
+        <section class="section section-alt" id="skills">
+
+            <div class="container">
+
+                <!-- Skills Heading -->
+
+                <span class="skills-label">
+                    MY SKILLS
+                </span>
+
+                <h2 class="section-title">
+                    Skills
+                </h2>
+
+                <p class="section-lede">
+                    Creative skills and tools I use to bring ideas to life.
+                </p>
+
+
+                <!-- Skills Grid -->
+
+                <div class="skills-grid">
+
+
+                    <!-- Skill 1 -->
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Motion Graphics
+                        </h3>
+
+                        <p>
+                            Creating engaging animations, motion effects
+                            and dynamic visual content.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Skill 2 -->
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Video Editing
+                        </h3>
+
+                        <p>
+                            Editing creative videos with smooth cuts,
+                            transitions and visual effects.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Skill 3 -->
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Animation
+                        </h3>
+
+                        <p>
+                            Designing smooth and attractive animations
+                            for digital content.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Skill 4 -->
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Visual Design
+                        </h3>
+
+                        <p>
+                            Creating clean, modern and visually
+                            appealing designs.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Skill 5 -->
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Visual Storytelling
+                        </h3>
+
+                        <p>
+                            Turning ideas into visuals that communicate
+                            a clear and engaging story.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Skill 6 -->
+
+                    <!-- <div class="skill-card">
+
+                        <h3>
+                            Creative Design
+                        </h3>
+
+                        <p>
+                            Developing creative concepts for social media,
+                            promotional and digital content.
+                        </p>
+
+                    </div> -->
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

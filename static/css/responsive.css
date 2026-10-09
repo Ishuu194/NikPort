@@ -1,0 +1,804 @@
+/* ============================================================
+   responsive.css
+   Mobile, tablet and desktop responsive design
+   ============================================================ */
+
+
+/* ============================================================
+   MOBILE MENU
+   Below 900px
+   ============================================================ */
+
+@media (max-width: 899px) {
+
+    /* ---------- Header ---------- */
+
+    .menu-btn {
+
+        display: grid;
+
+    }
+
+
+    .nav {
+
+        position: fixed;
+
+        top: var(--header-h);
+
+        left: 0;
+
+        right: 0;
+
+        bottom: 0;
+
+        z-index: 999;
+
+        padding:
+            var(--sp-5);
+
+        background: var(--bg);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-10px);
+
+        transition:
+            opacity var(--t-base),
+            transform var(--t-base),
+            visibility var(--t-base);
+
+        overflow-y: auto;
+
+    }
+
+
+    .nav.is-open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+
+    }
+
+
+    .nav-list {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+    }
+
+
+    .nav-list li + li {
+
+        border-top:
+            1px solid var(--border);
+
+    }
+
+
+    .nav-list a {
+
+        display: block;
+
+        padding:
+            var(--sp-4)
+            var(--sp-2);
+
+        font-size: 1rem;
+
+    }
+
+
+    .nav-list a::after {
+
+        display: none;
+
+    }
+
+
+    .nav-list a.is-active {
+
+        color: var(--accent);
+
+    }
+
+
+    body.menu-open {
+
+        overflow: hidden;
+
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+
+        padding-block:
+            4rem
+            5rem;
+
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: var(--sp-7);
+
+    }
+
+
+    .hero-text {
+
+        order: 2;
+
+        text-align: center;
+
+    }
+
+
+    .hero-photo-wrap {
+
+        order: 1;
+
+    }
+
+
+    .hero-lede {
+
+        margin-inline: auto;
+
+    }
+
+
+    .hero-cta {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-links {
+
+        justify-content: center;
+
+    }
+
+
+    /* ---------- About ---------- */
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* ---------- Contact ---------- */
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* ---------- Activities ---------- */
+
+    .activities-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   640px and above
+   ============================================================ */
+
+@media (min-width: 640px) {
+
+    .container {
+
+        width:
+            min(
+                100% - 3rem,
+                var(--container)
+            );
+
+    }
+
+
+    .hero-photo {
+
+        width: 290px;
+
+        height: 290px;
+
+    }
+
+
+    .contact-form {
+
+        padding: var(--sp-6);
+
+    }
+
+
+    .contact-item {
+
+        padding: var(--sp-5);
+
+    }
+
+}
+
+
+/* ============================================================
+   TABLET LANDSCAPE
+   768px and above
+   ============================================================ */
+
+@media (min-width: 768px) {
+
+    .hero {
+
+        padding-block:
+            5rem
+            6rem;
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns:
+            minmax(0, 1.5fr)
+            minmax(250px, 1fr);
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1.15fr);
+
+    }
+
+
+    .activities-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   DESKTOP
+   900px and above
+   ============================================================ */
+
+@media (min-width: 900px) {
+
+    /* ---------- Navigation ---------- */
+
+    .nav {
+
+        display: block;
+
+    }
+
+
+    .menu-btn {
+
+        display: none;
+
+    }
+
+
+    /* ---------- Header ---------- */
+
+    .header-inner {
+
+        min-height:
+            var(--header-h);
+
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero-grid {
+
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            minmax(300px, 0.85fr);
+
+        gap:
+            clamp(
+                3rem,
+                6vw,
+                5rem
+            );
+
+    }
+
+
+    .hero-text {
+
+        order: 1;
+
+        text-align: left;
+
+    }
+
+
+    .hero-photo-wrap {
+
+        order: 2;
+
+    }
+
+
+    .hero-lede {
+
+        margin-inline: 0;
+
+    }
+
+
+    .hero-cta {
+
+        justify-content: flex-start;
+
+    }
+
+
+    .hero-links {
+
+        justify-content: flex-start;
+
+    }
+
+
+    /* ---------- About ---------- */
+
+    .about-grid {
+
+        grid-template-columns:
+            minmax(0, 1.6fr)
+            minmax(260px, 1fr);
+
+    }
+
+
+    /* ---------- Featured Project ---------- */
+
+    .project-card.is-featured {
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1.05fr)
+            minmax(0, 1fr);
+
+    }
+
+
+    .project-card.is-featured
+    .project-thumb {
+
+        height: 100%;
+
+        aspect-ratio: auto;
+
+        border-right:
+            1px solid var(--border);
+
+    }
+
+
+    .project-card.is-featured
+    .project-body {
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: var(--sp-6);
+
+    }
+
+
+    /* ---------- Activities ---------- */
+
+    .activities-grid {
+
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   LARGE DESKTOP
+   1200px and above
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    .hero {
+
+        padding-block:
+            6rem
+            7rem;
+
+    }
+
+
+    .hero-photo {
+
+        width: 330px;
+
+        height: 330px;
+
+    }
+
+
+    .section {
+
+        padding-block:
+            6rem;
+
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   Below 640px
+   ============================================================ */
+
+@media (max-width: 639px) {
+
+    /* ---------- Container ---------- */
+
+    .container {
+
+        width:
+            min(
+                100% - 2rem,
+                var(--container)
+            );
+
+    }
+
+
+    /* ---------- Header ---------- */
+
+    .header-inner {
+
+        gap: var(--sp-2);
+
+    }
+
+
+    .brand-name {
+
+        font-size: 0.95rem;
+
+    }
+
+
+    .header-actions {
+
+        gap: 0;
+
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+
+        padding-block:
+            3.5rem
+            4rem;
+
+    }
+
+
+    .hero-photo {
+
+        width: 230px;
+
+        height: 230px;
+
+    }
+
+
+    .hero-photo::before {
+
+        inset: -8px;
+
+    }
+
+
+    .hero-photo::after {
+
+        inset: -18px;
+
+    }
+
+
+    .hero-text h1 {
+
+        font-size:
+            clamp(
+                2.2rem,
+                11vw,
+                3rem
+            );
+
+    }
+
+
+    .hero-lede {
+
+        font-size:
+            0.95rem;
+
+    }
+
+
+    .hero-cta {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .hero-cta .btn {
+
+        width: 100%;
+
+    }
+
+
+    .hero-links {
+
+        gap: var(--sp-4);
+
+        justify-content: center;
+
+    }
+
+
+    /* ---------- Section ---------- */
+
+    .section {
+
+        padding-block:
+            4rem;
+
+    }
+
+
+    .section-title {
+
+        padding-left:
+            var(--sp-4);
+
+    }
+
+
+    .section-lede {
+
+        padding-left:
+            var(--sp-4);
+
+    }
+
+
+    /* ---------- Grids ---------- */
+
+    .skills-grid,
+
+    .projects-grid,
+
+    .edu-grid,
+
+    .cred-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* ---------- Activities ---------- */
+
+    .activities-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .activity-image {
+
+        height: 230px;
+
+    }
+
+
+    /* ---------- Cards ---------- */
+
+    .skill-card,
+
+    .edu-card,
+
+    .cred-card {
+
+        padding: var(--sp-4);
+
+    }
+
+
+    .project-body {
+
+        padding: var(--sp-4);
+
+    }
+
+
+    /* ---------- Contact ---------- */
+
+    .contact-form {
+
+        padding: var(--sp-4);
+
+    }
+
+
+    .contact-item {
+
+        padding: var(--sp-3);
+
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .footer-nav {
+
+        flex-wrap: wrap;
+
+        gap: var(--sp-3);
+
+    }
+
+
+    /* ---------- Back To Top ---------- */
+
+    .to-top {
+
+        right: 16px;
+
+        bottom: 16px;
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+
+    .site-header,
+
+    .menu-btn,
+
+    .theme-btn,
+
+    .to-top,
+
+    .contact-form,
+
+    .hero-cta,
+
+    .hero-links,
+
+    .hero-status {
+
+        display: none !important;
+
+    }
+
+
+    body {
+
+        background: #ffffff;
+
+        color: #000000;
+
+    }
+
+
+    .section,
+
+    .hero {
+
+        padding-block: 1rem;
+
+    }
+
+
+    .section-alt {
+
+        background: #ffffff;
+
+    }
+
+
+    a {
+
+        color: #000000;
+
+        text-decoration: underline;
+
+    }
+
+}

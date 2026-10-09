@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layout.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/components.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css')}}">
+</head>
+
+
+<body>
+        {% include 'nav.html' %}
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="section about-section" id="about">
+
+        <div class="container">
+
+            <!-- Heading -->
+
+            <div class="about-heading">
+
+                <span class="about-label">
+                    ABOUT ME
+                </span>
+
+                <h1 class="section-title">
+                    Designing motion. <br>
+                        Editing stories.
+                </h1>
+
+                <p class="section-lede">
+                    A little about me and my creative journey.
+                </p>
+
+            </div>
+
+
+            <!-- About Content -->
+
+            <div class="about-grid">
+
+
+                <!-- Left Content -->
+
+                <div class="about-body">
+
+                    <p class="about-intro">
+
+                        Hi, I'm <strong>Nikhil Bonde</strong>, a
+                        Motion Graphics Designer passionate about
+                        creating engaging visual experiences.
+
+                    </p>
+
+
+                    <p>
+
+                        I enjoy turning ideas into attractive
+                        animations, smooth transitions and
+                        creative video content that connects
+                        with the audience.
+
+                    </p>
+
+
+                    <p>
+
+                        My focus is on creating clean,
+                        modern and visually appealing designs
+                        for digital content, social media and
+                        promotional videos.
+
+                    </p>
+
+
+                    <!-- Skills Tags -->
+
+                    <!-- <div class="about-tags">
+
+                        <p>I used various software such as</p>
+                        <br><br>
+
+                        <span>Adobe After Effects</span>
+
+                        <span>Adobe Premiere Pro</span>
+
+                        <span>Adobe Illustrator</span>
+
+                        <span>Adobe Photoshop</span>
+
+                         <span>Animation</span>
+
+                        <span>Visual Design</span> -->
+
+                    <!-- </div> -->
+
+                    <div class="about-tags">
+
+                         <p>I used various software such as</p>
+
+                        <div class="software-tags">
+
+                        <span>Adobe After Effects</span>
+                        <span>Adobe Premiere Pro</span>
+                        <span>Adobe Illustrator</span>
+                        <span>Adobe Photoshop</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Right Card -->
+
+                <div class="about-card">
+
+                    <div class="about-card-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Creative Focus
+                    </h3>
+
+                    <p>
+                        Motion Graphics & Video Editing
+                    </p>
+
+
+                    <div class="about-line"></div>
+
+
+                    <div class="about-info">
+
+                        <span>Focus</span>
+
+                        <strong>
+                            Visual Storytelling
+                        </strong>
+
+                    </div>
+
+
+                    <div class="about-info">
+
+                        <span>Style</span>
+
+                        <strong>
+                            Clean & Modern
+                        </strong>
+
+                    </div>
+
+
+                    <div class="about-info">
+
+                        <span>Passion</span>
+
+                        <strong>
+                            Creative Design
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <p class="footer-name">
+                Nikhil Bonde
+            </p>
+
+
+            <p class="footer-copy">
+
+                © <span id="year"></span>
+                Nikhil Bonde. All rights reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Back To Top -->
+
+    <button
+        class="to-top"
+        id="to-top"
+        type="button"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/project.js') }}" defer></script>
+
+    <script src="{{ url_for('static', filename='js/animation.js') }}" defer></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+/* ============================================================
+   base.css
+   Basic colors, fonts, reset and common styles
+   ============================================================ */
+
+
+/* ============================================================
+   COLOR VARIABLES
+   ============================================================ */
+
+:root {
+
+    --bg: #ffffff;
+    --surface: #f8f8f6;
+    --surface-2: #f1f1ee;
+
+    --text: #182033;
+    --text-muted: #667085;
+
+    --border: #e2e4e8;
+    --border-strong: #c9cdd3;
+
+    --accent: #b95724;
+    --accent-hover: #99471c;
+    --accent-soft: #f8e7dd;
+    --accent-text: #ffffff;
+
+    --success: #16834d;
+
+    --shadow-sm:
+        0 2px 6px rgba(15, 23, 42, 0.06);
+
+    --shadow-md:
+        0 8px 24px rgba(15, 23, 42, 0.09);
+
+    --shadow-lg:
+        0 16px 40px rgba(15, 23, 42, 0.12);
+
+
+    /* ---------- Font ---------- */
+
+    --font:
+        Inter,
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+
+    /* ---------- Font Sizes ---------- */
+
+    --fs-display:
+        clamp(2.5rem, 5vw, 4.5rem);
+
+    --fs-h2:
+        clamp(1.8rem, 3vw, 2.5rem);
+
+    --fs-h3: 1.2rem;
+    --fs-body: 1rem;
+    --fs-sm: 0.9rem;
+    --fs-xs: 0.8rem;
+
+
+    /* ---------- Spacing ---------- */
+
+    --sp-1: 0.25rem;
+    --sp-2: 0.5rem;
+    --sp-3: 0.75rem;
+    --sp-4: 1rem;
+    --sp-5: 1.5rem;
+    --sp-6: 2rem;
+    --sp-7: 3rem;
+    --sp-8: 4rem;
+
+    --section-y:
+        clamp(4rem, 8vw, 7rem);
+
+
+    /* ---------- Border Radius ---------- */
+
+    --r-sm: 6px;
+    --r-md: 10px;
+    --r-lg: 16px;
+    --r-xl: 24px;
+
+
+    /* ---------- Layout ---------- */
+
+    --container: 1140px;
+    --header-h: 72px;
+
+
+    /* ---------- Transition ---------- */
+
+    --t-fast: 150ms ease;
+    --t-base: 300ms ease;
+}
+
+
+/* ============================================================
+   DARK THEME
+   ============================================================ */
+
+[data-theme="dark"] {
+
+    --bg: #0f172a;
+    --surface: #162033;
+    --surface-2: #1e293b;
+
+    --text: #f8fafc;
+    --text-muted: #a7b0c0;
+
+    --border: #2c374a;
+    --border-strong: #3d4b63;
+
+    --accent: #e87538;
+    --accent-hover: #f28a52;
+    --accent-soft: #3b2418;
+    --accent-text: #ffffff;
+
+    --success: #3dcc82;
+
+    --shadow-sm:
+        0 2px 6px rgba(0, 0, 0, 0.3);
+
+    --shadow-md:
+        0 8px 24px rgba(0, 0, 0, 0.35);
+
+    --shadow-lg:
+        0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 20px);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: var(--fs-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+
+    transition:
+        background-color var(--t-base),
+        color var(--t-base);
+}
+
+
+/* ---------- Images ---------- */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ---------- Form Elements ---------- */
+
+input,
+textarea,
+button,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+
+/* ---------- Lists ---------- */
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: var(--fs-display);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+p {
+    max-width: 68ch;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   FOCUS
+   ============================================================ */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+    background: var(--accent);
+    color: var(--accent-text);
+}
+
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+
+/* Smooth theme transition */
+body,
+.site-header,
+section,
+.container,
+.card,
+footer,
+a,
+button,
+h1, h2, h3, h4, h5, h6,
+p, span, li {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}

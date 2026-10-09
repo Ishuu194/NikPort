@@ -1,0 +1,1102 @@
+/* ============================================================
+   layout.css
+   Main layout, header, hero and sections
+   ============================================================ */
+
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+
+    width: min(
+        100% - 2.5rem,
+        var(--container)
+    );
+
+    margin-inline: auto;
+
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--bg) 92%,
+            transparent
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    border-bottom:
+        1px solid transparent;
+
+    transition:
+        border-color var(--t-base),
+        box-shadow var(--t-base);
+
+}
+
+
+.site-header.is-scrolled {
+
+    border-bottom-color:
+        var(--border);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.header-inner {
+
+    min-height:
+        var(--header-h);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--sp-5);
+
+}
+
+
+/* ============================================================
+   BRAND
+   ============================================================ */
+
+.brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--sp-3);
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+
+}
+
+
+.brand:hover {
+
+    color: var(--text);
+
+}
+
+
+.brand-mark {
+
+    width: 78px;
+
+    height: 78px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: var(--accent);
+
+    color: var(--accent-text);
+
+    font-size: 40px;
+
+    font-family: Georgia, serif;
+
+    font-weight: 700;
+
+}
+
+
+.brand-name {
+
+    font-weight: 700;
+
+    font-size: 2.2rem;
+
+    font-family: Georgia, serif;
+
+}
+
+
+/* ============================================================
+   HEADER RIGHT
+   Navigation + Theme Button
+   ============================================================ */
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 28px;
+
+    margin-left: auto;
+
+    flex-wrap: nowrap;
+
+}
+
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+.nav {
+
+    flex-shrink: 0;
+
+}
+
+
+.nav-list {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    flex-wrap: nowrap;
+
+    white-space: nowrap;
+
+}
+
+
+.nav-list a {
+
+    position: relative;
+
+    display: inline-block;
+
+    padding:
+        var(--sp-2)
+        0;
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-sm);
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--t-fast);
+
+}
+
+
+.nav-list a:hover {
+
+    color: var(--text);
+
+}
+
+
+.nav-list a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: var(--accent);
+
+    border-radius: 2px;
+
+    transform:
+        scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform var(--t-fast);
+
+}
+
+
+.nav-list a.is-active {
+
+    color: var(--text);
+
+}
+
+
+.nav-list a.is-active::after {
+
+    transform:
+        scaleX(1);
+
+}
+
+
+/* ============================================================
+   HEADER ACTIONS
+   ============================================================ */
+
+.header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+
+}
+
+
+.theme-btn {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--text-muted);
+
+    font-size: 1.15rem;
+
+    flex-shrink: 0;
+
+    transition:
+        background var(--t-fast),
+        color var(--t-fast);
+
+}
+
+
+.theme-btn:hover {
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    width: 40px;
+
+    height: 40px;
+
+    place-items: center;
+
+    border-radius: var(--r-sm);
+
+    color: var(--text);
+
+    font-size: 1.3rem;
+
+}
+
+
+.menu-btn:hover {
+
+    background: var(--surface-2);
+
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+
+    padding-block:
+        clamp(5rem, 9vw, 8rem)
+        clamp(5rem, 9vw, 8rem);
+
+}
+
+
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 0.85fr);
+
+    gap:
+        clamp(3rem, 7vw, 6rem);
+
+    align-items: center;
+
+}
+
+
+.hero-text {
+
+    order: 1;
+
+}
+
+
+.hero-intro {
+
+    margin-bottom: var(--sp-3);
+
+    color: var(--text-muted);
+
+    font-size: 1.05rem;
+
+    font-weight: 500;
+
+}
+
+
+.hero-text h1 {
+
+    margin-bottom: var(--sp-5);
+
+    max-width: 700px;
+
+}
+
+
+.hero-lede {
+
+    margin-bottom: var(--sp-6);
+
+    max-width: 650px;
+
+    color: var(--text-muted);
+
+    font-size:
+        clamp(
+            1rem,
+            1rem + 0.3vw,
+            1.15rem
+        );
+
+}
+
+
+.hero-cta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: var(--sp-3);
+
+    margin-bottom: var(--sp-5);
+
+}
+
+
+.hero-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--sp-5);
+
+}
+
+
+.hero-links a {
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-sm);
+
+    font-weight: 500;
+
+    transition:
+        color var(--t-fast);
+
+}
+
+
+.hero-links a:hover {
+
+    color: var(--accent);
+
+}
+
+
+/* ============================================================
+   HERO PHOTO
+   ============================================================ */
+
+.hero-photo-wrap {
+
+    order: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: var(--sp-5);
+
+}
+
+
+.hero-photo {
+
+    position: relative;
+
+    width:
+        clamp(
+            260px,
+            28vw,
+            340px
+        );
+
+    height:
+        clamp(
+            260px,
+            28vw,
+            340px
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    /* Keep the photo area perfectly circular */
+    aspect-ratio: 1 / 1;
+
+}
+
+
+.hero-photo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border:
+        1px solid var(--border-strong);
+
+    border-radius: 50%;
+
+}
+
+
+.hero-photo::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -26px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50%;
+
+}
+
+
+/* Photo */
+
+.hero-photo .avatar {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    object-position: center 20%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    border:
+        8px solid var(--bg);
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+/* ============================================================
+   HERO STATUS
+   ============================================================ */
+
+.hero-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--sp-2);
+
+    padding:
+        0.5rem
+        0.85rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-xs);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+}
+
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+
+.section {
+
+    padding-block:
+        var(--section-y);
+
+}
+
+
+.section-alt {
+
+    background:
+        var(--surface);
+
+}
+
+
+.section-title {
+
+    position: relative;
+
+    margin-bottom: var(--sp-3);
+
+    padding-left: var(--sp-5);
+
+}
+
+
+.section-title::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0.15em;
+
+    bottom: 0.15em;
+
+    width: 4px;
+
+    border-radius: 4px;
+
+    background: var(--accent);
+
+}
+
+
+.section-lede {
+
+    margin-bottom: var(--sp-6);
+
+    padding-left: var(--sp-5);
+
+    color: var(--text-muted);
+
+}
+
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(260px, 1fr);
+
+    gap: var(--sp-6);
+
+    align-items: start;
+
+}
+
+
+.about-body p + p {
+
+    margin-top: var(--sp-4);
+
+}
+
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: var(--sp-4);
+
+}
+
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: var(--sp-5);
+
+}
+
+
+/* ============================================================
+   EDUCATION
+   ============================================================ */
+
+.edu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: var(--sp-4);
+
+}
+
+
+/* ============================================================
+   ACHIEVEMENTS
+   ============================================================ */
+
+.cred-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: var(--sp-4);
+
+}
+
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+
+.timeline {
+
+    display: grid;
+
+    gap: var(--sp-4);
+
+}
+
+
+.timeline-item {
+
+    max-width: 800px;
+
+}
+
+
+/* ============================================================
+   ACTIVITIES
+   ============================================================ */
+
+.activities-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: var(--sp-5);
+
+    width: 100%;
+
+}
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
+
+    gap: var(--sp-7);
+
+    align-items: start;
+
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+
+    padding-block: var(--sp-6);
+
+    border-top:
+        1px solid var(--border);
+
+    background: var(--bg);
+
+}
+
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--sp-4);
+
+}
+
+
+/* Nikhil Bonde - Left */
+
+.footer-name {
+
+    font-weight: 600;
+
+    order: 1;
+
+}
+
+
+/* Copyright - Right */
+
+.footer-copy {
+
+    width: auto;
+
+    padding-top: 0;
+
+    border-top: none;
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-xs);
+
+    order: 2;
+
+}
+
+
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+
+.to-top {
+
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    z-index: 900;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    box-shadow: var(--shadow-md);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity var(--t-base),
+        visibility var(--t-base),
+        transform var(--t-base);
+
+}
+
+
+.to-top.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+
+}
+
+
+.to-top:hover {
+
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+}
+
+
+/* ============================================================
+   DESKTOP HEADER FIX
+   Logo Left + Navigation + Theme Right
+   ============================================================ */
+
+@media (min-width: 900px) {
+
+    .header-inner {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+    }
+
+
+    .header-right {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-end;
+
+        gap: 28px;
+
+        margin-left: auto;
+
+        flex-wrap: nowrap;
+
+    }
+
+
+    .nav {
+
+        flex-shrink: 0;
+
+    }
+
+
+    .nav-list {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 32px;
+
+        flex-wrap: nowrap;
+
+        white-space: nowrap;
+
+    }
+
+
+    .header-actions {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        flex-shrink: 0;
+
+        white-space: nowrap;
+
+    }
+
+}
+
+/* ============================================================
+   FINAL HEADER POSITION
+   ============================================================ */
+
+.header-inner {
+    width: 100%;
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/* Logo - more towards left corner */
+.brand {
+    margin-left: 0;
+}
+
+
+/* Right side navigation */
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+
+/* Navigation stays in one line */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+
+/* Theme button - slightly higher */
+.header-actions {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2px;
+}
+
+.theme-btn {
+    position: relative;
+    top: -4px;
+}
