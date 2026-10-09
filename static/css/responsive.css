@@ -802,3 +802,55 @@
     }
 
 }
+@media (max-width: 899px) {
+
+    .header-right {
+        position: static;
+    }
+
+    .nav.is-open {
+        display: block !important;
+        position: fixed;
+        top: var(--header-h, 90px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: calc(100vh - var(--header-h, 90px));
+
+        background: var(--bg, #000);
+        z-index: 9999;
+
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .nav.is-open .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav.is-open .nav-list li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav.is-open .nav-list a {
+        display: block;
+        padding: 18px 12px;
+        color: var(--text, #fff);
+        font-size: 18px;
+        text-decoration: none;
+    }
+}
