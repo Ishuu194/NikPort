@@ -45,41 +45,44 @@ if (themeToggle) {
         applyTheme(newTheme);
     });
 }
+/* =========================
+   Mobile Menu
+========================= */
 
-    /* =========================
-       Mobile Menu
-    ========================= */
-    const menuBtn = document.getElementById("menu-btn");
-    const nav = document.getElementById("nav");
+const menuBtn = document.getElementById("menu-btn");
+const nav = document.getElementById("nav");
 
-    if (menuBtn && nav) {
+if (menuBtn && nav) {
 
-        menuBtn.addEventListener("click", () => {
+    menuBtn.addEventListener("click", function () {
 
-            nav.classList.toggle("is-open");
-            document.body.classList.toggle("menu-open");
+        const isOpen = nav.classList.toggle("is-open");
 
-            const isOpen = nav.classList.contains("is-open");
+        document.body.classList.toggle("menu-open", isOpen);
 
-            menuBtn.setAttribute("aria-expanded", isOpen);
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+
+        menuBtn.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+    const navLinks = nav.querySelectorAll("a");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            nav.classList.remove("is-open");
+            document.body.classList.remove("menu-open");
+
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.textContent = "☰";
+
         });
 
+    });
 
-        // Close menu when clicking a navigation link
-        const navLinks = nav.querySelectorAll("a");
-
-        navLinks.forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                nav.classList.remove("is-open");
-                document.body.classList.remove("menu-open");
-
-                menuBtn.setAttribute("aria-expanded", "false");
-            });
-
-        });
-    }
+}
 
 
     /* =========================
