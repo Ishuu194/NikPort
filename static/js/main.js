@@ -49,6 +49,10 @@ if (themeToggle) {
    Mobile Menu
 ========================= */
 
+    /* =========================
+   Mobile Menu
+========================= */
+
 const menuBtn = document.getElementById("menu-btn");
 const nav = document.getElementById("nav");
 
@@ -83,7 +87,6 @@ if (menuBtn && nav) {
     });
 
 }
-
 
     /* =========================
        Header Shadow on Scroll
