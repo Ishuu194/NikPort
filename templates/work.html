@@ -17,78 +17,60 @@
 <body>
     {% include 'nav.html' %}
     <!-- ================= WORK / PROJECTS ================= -->
-
-        <section class="section" id="projects">
-
-            <div class="container">
-
-                <span class="skills-label">MY WORK</span>
-
-                <h2 class="section-title">
-                    Creative Work
-                </h2>
-
+    <section class="section" id="projects">
+        <div class="container">
+            <span class="skills-label">MY WORK</span>
+                <h2 class="section-title"> Creative Work </h2>
                 <p class="section-lede">
                     Explore my Motion Graphics and Video Editing work.
                 </p>
 
-
                 <div class="work-folder-grid">
-
-                    <!-- AI Video -->
+                <!-- AI Video -->
                     <div class="work-folder" onclick="openFolder('ai_video')">
                         <div class="folder-icon">📁</div>
                         <h3>AI Video</h3>
                         <p>AI-generated video projects</p>
                     </div>
 
-
-                    <!-- Motion Graphics -->
+                <!-- Motion Graphics -->
                     <div class="work-folder" onclick="openFolder('Motion_Graphics_video')">
                         <div class="folder-icon">📁</div>
                         <h3>Motion Graphics Video</h3>
                         <p>Motion graphics and animations</p>
                     </div>
 
-
-                    <!-- Podcast -->
+                <!-- Podcast -->
                     <div class="work-folder" onclick="openFolder('podcast_video')">
                         <div class="folder-icon">📁</div>
                         <h3>Podcast Video</h3>
                         <p>Podcast editing projects</p>
                     </div>
 
-
-                    <!-- Reels -->
+                <!-- Reels -->
                     <div class="work-folder" onclick="openFolder('Reels')">
                         <div class="folder-icon">📁</div>
                         <h3>Reels</h3>
                         <p>Short-form video content</p>
                     </div>
 
-
-                    <!-- Video Edit -->
+                <!-- Video Edit -->
                     <div class="work-folder" onclick="openFolder('Video_edit')">
                         <div class="folder-icon">📁</div>
                         <h3>Video Edit</h3>
                         <p>Professional video editing</p>
                     </div>
 
-
-                    <!-- White Board -->
+                <!-- White Board -->
                     <div class="work-folder" onclick="openFolder('white_board_animation')">
                         <div class="folder-icon">📁</div>
                         <h3>White Board Animation</h3>
                         <p>Whiteboard animation projects</p>
                     </div>
-
                 </div>
 
-
-                <!-- ================= FILE AREA ================= -->
-
+            <!-- ================= FILE AREA ================= -->
                 <div id="file-area" class="file-area">
-
                     <div class="file-area-header">
                         <button onclick="closeFolder()" class="back-folder">
                             ← Back
@@ -98,56 +80,36 @@
                             Files
                         </h3>
                     </div>
-
-
                     <div id="file-list" class="file-list">
                         <!-- Files will appear here -->
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-        <!-- ================= FOOTER ================= -->
-
+    <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
-
         <div class="container footer-inner">
+                <p class="footer-name">
+                    Nikhil Bonde
+                </p>
 
-            <p class="footer-name">
-                Nikhil Bonde
-            </p>
-
-
-            <p class="footer-copy">
-
-                © <span id="year"></span>
-                Nikhil Bonde. All rights reserved.
-
-            </p>
-
+                <p class="footer-copy">
+                    © <span id="year"></span>
+                    Nikhil Bonde. All rights reserved.
+                </p>
         </div>
-
     </footer>
 
-
-
-    <!-- Back To Top -->
-
+    <!-- Back To Top
     <button
         class="to-top"
         id="to-top"
         type="button"
         aria-label="Back to top">
-
         ↑
-
-    </button>
-
-
-
+    </button> -->
+    
     <!-- JavaScript -->
 
     <script src="{{ url_for('static', filename='js/project.js') }}" defer></script>
